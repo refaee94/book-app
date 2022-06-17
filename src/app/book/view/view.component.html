@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>View Books</h1>
+
+  <a href="#" routerLink="/bookList/index" class="btn btn-primary">Back</a>
+
+  <table class="table table-bordered m-2">
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Author</th>
+      <th>Rank</th>
+
+      <th width="220px">Actions</th>
+    </tr>
+    <tr *ngFor="let bookList of bookList">
+      <td>{{ bookList.title }}</td>
+      <td>{{ bookList.year }}</td>
+      <td>{{ bookList.author }}</td>
+
+      <td>    <div class="  active ">
+
+       <input min="0" [(ngModel)]="bookList.rank" type="number" [value]="bookList.rank" class ="m-1">
+        <button type="button" (click)="editRank(bookList.id,bookList.rank)" class="btn btn-success">Edit Rank</button></div>
+      </td>
+      <td>    <div class="  active ">
+
+         <button type="button" (click)="deleteBook(bookList.id)" class="btn btn-danger">Delete Book</button></div>
+       </td>
+    </tr>
+  </table>
+
+</div>

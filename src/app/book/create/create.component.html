@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Create New Post</h1>
+
+    <a href="#" routerLink="/bookList/index" class="btn btn-primary">Back</a>
+
+    <form [formGroup]="form" (ngSubmit)="add()">
+
+        <div class="controlsorm-group">
+            <label controlsor="title">Title:</label>
+            <input
+            formControlName="title"                id="title"
+                type="text"
+                class="controlsorm-control">
+            <div *ngIcontrols="controls['title'].touched && controls['title'].invalid" class="alert alert-danger">
+                <div *ngIcontrols="controls['title'].errors && controls['title'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+        <app-create-book (onAddNewBook)="addBook($event)"> ></app-create-book>
+        <div class="  active ">
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button></div>
+    </form>
+</div>
