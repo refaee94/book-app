@@ -15,7 +15,7 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
     this.bookLists=this.bookService.getAllLists();
   }
-  deleteList(id:number){
+  deleteList(id:string){
     this.bookService.deleteBookList(id);
     this.bookLists=this.bookService.getAllLists();
 

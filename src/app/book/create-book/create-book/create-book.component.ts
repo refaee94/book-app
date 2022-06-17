@@ -14,7 +14,7 @@ export class CreateBookComponent implements OnInit {
     'title': new FormControl("" , Validators.required),
     'year': new FormControl("", Validators.required),
     'author': new FormControl("", Validators.required),
-    'rank': new FormControl(0, Validators.required),
+    'rank': new FormControl(1, Validators.required),
 
   }); }
 @Output() onAddNewBook = new EventEmitter<Book>();

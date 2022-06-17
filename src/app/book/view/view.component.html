@@ -19,7 +19,7 @@
 
       <td>    <div class="  active ">
 
-       <input min="0" [(ngModel)]="bookList.rank" type="number" [value]="bookList.rank" class ="m-1">
+       <input min="1" [(ngModel)]="bookList.rank" type="number" [value]="bookList.rank" class ="m-1">
         <button type="button" (click)="editRank(bookList.id,bookList.rank)" class="btn btn-success">Edit Rank</button></div>
       </td>
       <td>    <div class="  active ">
@@ -28,5 +28,6 @@
        </td>
     </tr>
   </table>
+  <app-create-book (onAddNewBook)="addBook($event)"> </app-create-book>
 
 </div>

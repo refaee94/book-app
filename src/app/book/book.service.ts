@@ -12,11 +12,12 @@ export class BookService {
       id:  getNewID(),
       title: 'list1',
       bookList: [
-        { author: 'Frank Herbert', id: getNewID(), rank: 1, year: '1965', title: 'Dune' },
-        { author: 'Orson Scott Card', id:  getNewID(), rank: 2, year: '1985', title: 'Enders Game' },
-        { author: 'George Orwell', id:  getNewID(), rank: 3, year: '1949', title: '1984' }
-
-      ],
+        { author: 'Frank Herbert', id: Math.random().toString(), rank: 1, year: '1965', title: 'Dune' },
+        { author: 'Orson Scott Card', id: Math.random().toString(), rank: 2, year: '1985', title: 'Enders Game' },
+        { author: 'George Orwell', id: Math.random().toString(), rank: 3, year: '1949', title: '1984' },
+        { author: 'Ray Bradbury', id: Math.random().toString(), rank: 3, year: '1953', title: 'Fahrenheit 451' },
+        { author: 'Aldous Huxley  ', id: Math.random().toString(), rank: 3, year: '1932', title: 'Brave New World' }
+           ],
     });
 
     this.bookLists.forEach(a=>a.bookList.sort((a,b)=>a.rank-b.rank))

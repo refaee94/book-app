@@ -11,7 +11,7 @@ import { Book, BookList } from '../models/IBooklist.model';
 export class ViewComponent implements OnInit{
 
   id!: string;
-  bookList!: Book[]|undefined;
+  bookList: Book[]|undefined=[]
 
 
   constructor(
@@ -44,5 +44,12 @@ this.bookService.updateBookRank(BookId,this.id,rank)
 
     this.bookService.deleteBook(BookId,this.id)
     this.updateBookList()
+      }
+
+      addBook(book: Book) {
+        this.bookList?.push(book);
+        this.updateBookList()
+        this.bookList?.sort((a,b)=>a.rank-b.rank)
+
       }
 }
