@@ -7,15 +7,12 @@ describe('ViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewComponent ]
-    })
-    .compileComponents();
+      declarations: [ViewComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ViewComponent);
     fixture.detectChanges();
   });
-
-
 });
