@@ -8,17 +8,14 @@ import { CreateComponent } from './create/create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateBookComponent } from './create-book/create-book/create-book.component';
 
-
 @NgModule({
   declarations: [
     IndexComponent,
     ViewComponent,
-    CreateComponent,CreateBookComponent
+    CreateComponent,
+    CreateBookComponent,
   ],
-  imports: [
-    CommonModule,    FormsModule,
-
-    BookRoutingModule,ReactiveFormsModule
-  ],exports:[BookRoutingModule]
+  imports: [CommonModule, FormsModule, BookRoutingModule, ReactiveFormsModule],
+  exports: [BookRoutingModule],
 })
-export class BookModule { }
+export class BookModule {}

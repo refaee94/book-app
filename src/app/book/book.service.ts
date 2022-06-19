@@ -9,18 +9,48 @@ export class BookService {
   private bookLists: BookList[] = [];
   constructor() {
     this.bookLists.push({
-      id:  getNewID(),
+      id: getNewID(),
       title: 'list1',
       bookList: [
-        { author: 'Frank Herbert', id: Math.random().toString(), rank: 1, year: '1965', title: 'Dune' },
-        { author: 'Orson Scott Card', id: Math.random().toString(), rank: 2, year: '1985', title: 'Enders Game' },
-        { author: 'George Orwell', id: Math.random().toString(), rank: 3, year: '1949', title: '1984' },
-        { author: 'Ray Bradbury', id: Math.random().toString(), rank: 4, year: '1953', title: 'Fahrenheit 451' },
-        { author: 'Aldous Huxley  ', id: Math.random().toString(), rank: 5, year: '1932', title: 'Brave New World' }
-           ],
+        {
+          author: 'Frank Herbert',
+          id: Math.random().toString(),
+          rank: 1,
+          year: '1965',
+          title: 'Dune',
+        },
+        {
+          author: 'Orson Scott Card',
+          id: Math.random().toString(),
+          rank: 2,
+          year: '1985',
+          title: 'Enders Game',
+        },
+        {
+          author: 'George Orwell',
+          id: Math.random().toString(),
+          rank: 3,
+          year: '1949',
+          title: '1984',
+        },
+        {
+          author: 'Ray Bradbury',
+          id: Math.random().toString(),
+          rank: 4,
+          year: '1953',
+          title: 'Fahrenheit 451',
+        },
+        {
+          author: 'Aldous Huxley  ',
+          id: Math.random().toString(),
+          rank: 5,
+          year: '1932',
+          title: 'Brave New World',
+        },
+      ],
     });
 
-    this.bookLists.forEach(a=>a.bookList.sort((a,b)=>a.rank-b.rank))
+    this.bookLists.forEach((a) => a.bookList.sort((a, b) => a.rank - b.rank));
   }
 
   public getAllLists(): BookList[] {
@@ -37,8 +67,6 @@ export class BookService {
 
   public getAllBooks(ListId: string) {
     return this.bookLists.find((a) => a.id == ListId);
-
-
   }
 
   public createBook(book: Book, bookListId: string) {
@@ -52,18 +80,17 @@ export class BookService {
       list.bookList = list?.bookList.filter((b) => b.id !== id);
     }
   }
-  public updateBookRank(id: string, bookListId: string,bookRank:number) {
+  public updateBookRank(id: string, bookListId: string, bookRank: number) {
     const list = this.bookLists.find((a) => a.id == bookListId);
 
     if (list != undefined) {
-     const book= list.bookList.find((a) => a.id == id);
+      const book = list.bookList.find((a) => a.id == id);
 
+      if (book != undefined) {
+        book.rank = bookRank;
 
-    if (book != undefined) {
-book.rank=bookRank;
-
-list.bookList.sort((a,b)=>a.rank-b.rank)}
-
+        list.bookList.sort((a, b) => a.rank - b.rank);
+      }
     }
   }
 }

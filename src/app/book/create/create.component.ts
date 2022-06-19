@@ -7,20 +7,17 @@ import { Book, BookList } from '../models/IBooklist.model';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrls: ['./create.component.scss']
+  styleUrls: ['./create.component.scss'],
 })
 export class CreateComponent implements OnInit {
   public form!: FormGroup;
-public books:Book[]=[];
+  public books: Book[] = [];
   /*------------------------------------------
   --------------------------------------------
   Created constructor
   --------------------------------------------
   --------------------------------------------*/
-  constructor(
-    public bookService: BookService,
-    private router: Router
-  ) { }
+  constructor(public bookService: BookService, private router: Router) {}
 
   /**
    * Write code on Method
@@ -29,24 +26,24 @@ public books:Book[]=[];
    */
   ngOnInit(): void {
     this.form = new FormGroup({
-      title: new FormControl('', Validators.required)
+      title: new FormControl('', Validators.required),
     });
   }
 
-
-  get controls(){
+  get controls() {
     return this.form.controls;
   }
 
-
-  add(){
-    const bookList = new BookList(this.form.controls["title"].value,this.books)
+  add() {
+    const bookList = new BookList(
+      this.form.controls['title'].value,
+      this.books
+    );
     this.bookService.createBookList(bookList);
-         this.router.navigateByUrl('bookList/index');
-
+    this.router.navigateByUrl('bookList/index');
   }
 
-addBook(book: Book) {
-  this.books.push(book);
-}
+  addBook(book: Book) {
+    this.books.push(book);
+  }
 }

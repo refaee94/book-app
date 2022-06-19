@@ -1,7 +1,9 @@
 <div class="container">
   <h1>Book Lists</h1>
 
-  <a href="#" routerLink="/bookList/create/" class="btn btn-success">Create New bookList</a>
+  <a href="#" routerLink="/bookList/create/" class="btn btn-success"
+    >Create New bookList</a
+  >
 
   <table class="table table-bordered m-2">
     <tr>
@@ -13,10 +15,23 @@
       <td>{{ bookList.id }}</td>
       <td>{{ bookList.title }}</td>
       <td>
-        <div class="  active ">
-
-        <button type="button  "   href="#" [routerLink]="['/bookList/', bookList.id, 'view']" class="btn btn-info m-2">View & Edit</button>
-        <button type="button" (click)="deleteList(bookList.id)" class="btn btn-danger m-2">Delete</button></div>
+        <div class="active">
+          <button
+            type="button  "
+            href="#"
+            [routerLink]="['/bookList/', bookList.id, 'view']"
+            class="btn btn-info m-2"
+          >
+            View & Edit
+          </button>
+          <button
+            type="button"
+            (click)="deleteList(bookList.id)"
+            class="btn btn-danger m-2"
+          >
+            Delete
+          </button>
+        </div>
       </td>
     </tr>
   </table>

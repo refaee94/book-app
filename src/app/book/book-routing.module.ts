@@ -5,7 +5,7 @@ import { IndexComponent } from './index/index.component';
 import { ViewComponent } from './view/view.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'bookList/index', pathMatch: 'full'},
+  { path: '', redirectTo: 'bookList/index', pathMatch: 'full' },
   { path: 'bookList/index', component: IndexComponent },
   { path: 'bookList/:bookListId/view', component: ViewComponent },
   { path: 'bookList/create', component: CreateComponent },
@@ -13,8 +13,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-
-
-export class BookRoutingModule { }
+export class BookRoutingModule {}
