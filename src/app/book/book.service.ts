@@ -15,8 +15,8 @@ export class BookService {
         { author: 'Frank Herbert', id: Math.random().toString(), rank: 1, year: '1965', title: 'Dune' },
         { author: 'Orson Scott Card', id: Math.random().toString(), rank: 2, year: '1985', title: 'Enders Game' },
         { author: 'George Orwell', id: Math.random().toString(), rank: 3, year: '1949', title: '1984' },
-        { author: 'Ray Bradbury', id: Math.random().toString(), rank: 3, year: '1953', title: 'Fahrenheit 451' },
-        { author: 'Aldous Huxley  ', id: Math.random().toString(), rank: 3, year: '1932', title: 'Brave New World' }
+        { author: 'Ray Bradbury', id: Math.random().toString(), rank: 4, year: '1953', title: 'Fahrenheit 451' },
+        { author: 'Aldous Huxley  ', id: Math.random().toString(), rank: 5, year: '1932', title: 'Brave New World' }
            ],
     });
 
@@ -46,17 +46,17 @@ export class BookService {
   }
 
   public deleteBook(id: string, bookListId: string) {
-    var list = this.bookLists.find((a) => a.id == bookListId);
+    const list = this.bookLists.find((a) => a.id == bookListId);
 
     if (list != undefined) {
       list.bookList = list?.bookList.filter((b) => b.id !== id);
     }
   }
   public updateBookRank(id: string, bookListId: string,bookRank:number) {
-    var list = this.bookLists.find((a) => a.id == bookListId);
+    const list = this.bookLists.find((a) => a.id == bookListId);
 
     if (list != undefined) {
-     var book= list.bookList.find((a) => a.id == id);
+     const book= list.bookList.find((a) => a.id == id);
 
 
     if (book != undefined) {

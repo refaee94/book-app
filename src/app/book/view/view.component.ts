@@ -1,7 +1,7 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BookService } from '../book.service';
-import { Book, BookList } from '../models/IBooklist.model';
+import { Book } from '../models/IBooklist.model';
 
 @Component({
   selector: 'app-view',
@@ -21,13 +21,13 @@ export class ViewComponent implements OnInit{
   }
   ngOnInit(): void {
     this.id = this.route.snapshot.params['bookListId'];
-    let list =this.bookService.getAllBooks(this.id)?.bookList
+    const list =this.bookService.getAllBooks(this.id)?.bookList
     if(list!==null) {
        this.bookList = list;
     } }
 
    updateBookList(): void {
-    let list =this.bookService.getAllBooks(this.id)?.bookList
+    const list =this.bookService.getAllBooks(this.id)?.bookList
          if(list!==null) {
             this.bookList = list;
          }

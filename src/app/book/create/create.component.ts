@@ -40,7 +40,7 @@ public books:Book[]=[];
 
 
   add(){
-    var bookList = new BookList(this.form.controls["title"].value,this.books)
+    const bookList = new BookList(this.form.controls["title"].value,this.books)
     this.bookService.createBookList(bookList);
          this.router.navigateByUrl('bookList/index');
 
