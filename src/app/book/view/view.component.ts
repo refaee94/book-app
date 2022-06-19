@@ -17,7 +17,6 @@ export class ViewComponent implements OnInit{
   constructor(
     public bookService: BookService,
     private route: ActivatedRoute,
-    private router: Router
    ) {
   }
   ngOnInit(): void {

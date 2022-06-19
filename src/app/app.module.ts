@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,9 +12,9 @@ import { BookModule } from './book/book.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,BookModule
+    AppRoutingModule,BookModule,RouterModule
   ],
-  providers: [],
+  providers: [ActivatedRoute],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
